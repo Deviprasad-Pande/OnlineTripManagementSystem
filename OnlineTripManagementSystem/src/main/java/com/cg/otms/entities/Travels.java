@@ -50,7 +50,7 @@ public class Travels {
 	}
 	@Override
 	public String toString() {
-		return "Travel [travelsId=" + travelsId + ", travelsName=" + travelsName + ", agentName=" + agentName
+		return "Travels [travelsId=" + travelsId + ", travelsName=" + travelsName + ", agentName=" + agentName
 				+ ", address=" + address + ", contact=" + contact + "]";
 	}
 	
