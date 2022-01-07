@@ -1,10 +1,29 @@
 package com.cg.otms.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class TicketDetails {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String ticketId;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="routeid",table = "Route")
 	private Route route;
+	
+	@Column(name="sta",nullable=false)
 	private String status;
+	
+	
 	public TicketDetails() {
 		super();
 		// TODO Auto-generated constructor stub

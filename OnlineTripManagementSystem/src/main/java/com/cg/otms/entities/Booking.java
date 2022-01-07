@@ -1,5 +1,7 @@
 package com.cg.otms.entities;
 
+
+
 public class Booking {
 
 	private int bookingId;
