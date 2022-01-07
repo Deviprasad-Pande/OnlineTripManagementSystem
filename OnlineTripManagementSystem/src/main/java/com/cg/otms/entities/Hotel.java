@@ -19,7 +19,6 @@ public class Hotel {
 	private String hotelType;
     
 	private String hotelDescription;
-
     @Column(name = "add_ress",nullable = false,length = 100)
 	private String address;
 

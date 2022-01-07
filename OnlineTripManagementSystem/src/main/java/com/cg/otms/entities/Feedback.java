@@ -20,8 +20,6 @@ public class Feedback {
 	private Customer customer;
 	private String feedback;
 	private  int rating;
-	
-
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="feedback_id",table = "Feedback")
 	private LocalDate submitDate;

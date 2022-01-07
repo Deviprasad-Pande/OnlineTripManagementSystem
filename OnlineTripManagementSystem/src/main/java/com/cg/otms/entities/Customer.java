@@ -25,7 +25,6 @@ public class Customer {
 
 	@Column(name = "addr",nullable = false,length = 100)
 	private String address;
-	
 
 	@Column(name = "mobile_no.",nullable = false,unique=true,length = 10)
 	private String mobileNo;
