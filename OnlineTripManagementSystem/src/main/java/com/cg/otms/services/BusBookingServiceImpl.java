@@ -7,8 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.tms.entities.BusBooking;
-import com.cg.tms.repositories.IBusBookingRepository;
+import com.cg.otms.entities.BusBooking;
+import com.cg.otms.repositories.IBusBookingRepository;
 
 /**
  * 
