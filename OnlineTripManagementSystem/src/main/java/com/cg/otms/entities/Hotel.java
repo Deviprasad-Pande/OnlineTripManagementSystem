@@ -8,7 +8,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Hotel {
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int hotelId ;

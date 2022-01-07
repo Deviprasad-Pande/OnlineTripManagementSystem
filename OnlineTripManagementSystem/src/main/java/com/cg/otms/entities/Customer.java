@@ -19,7 +19,6 @@ public class Customer {
 
 	@Column(name = "customer_name",nullable = false,length = 25)
 	private String customerName;
-
 	@Column(name = "pass_word",nullable = false,length = 15)
 	private String  customerPassword;
 

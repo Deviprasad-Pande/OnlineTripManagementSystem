@@ -16,7 +16,6 @@ public class Feedback {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
 	private String feedbackId;
-	
 	private Customer customer;
 	private String feedback;
 	private  int rating;
