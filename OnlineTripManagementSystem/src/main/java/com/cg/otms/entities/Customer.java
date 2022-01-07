@@ -11,7 +11,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
@@ -89,6 +88,4 @@ public class Customer {
 		this.mobileNo = mobileNo;
 		this.email = email;
 	}
-	
-	
 }

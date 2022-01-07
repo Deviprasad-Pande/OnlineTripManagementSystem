@@ -14,7 +14,6 @@ import javax.persistence.OneToOne;
 public class Feedback {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private String feedbackId;
 	private Customer customer;
 	private String feedback;

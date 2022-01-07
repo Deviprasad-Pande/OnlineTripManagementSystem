@@ -11,7 +11,6 @@ public class Hotel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int hotelId ;
-
     @Column(name = "hotel_name",nullable = false,unique=true)
 	private String hotelName;
     @Column(name = "hotel_type",nullable = false)
