@@ -17,7 +17,6 @@ public class Report {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int reportId;
 	
-	
     @Column(name = "report_name",nullable = false,length = 50)
 	private String reportName;
 	

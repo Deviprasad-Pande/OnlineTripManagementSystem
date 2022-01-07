@@ -13,7 +13,6 @@ public class PaymentDetails {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private  int paymentId;
 	
-	
 	@Column(name="payment_mode",nullable=false)
 	private  String paymentMode;
 	
