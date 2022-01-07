@@ -2,38 +2,38 @@ package com.cg.otms.entities;
 
 public class Bus {
 	
-	private int busid;
-	private String bustype;
-	private String busnumber;
+	private int busId;
+	private String busType;
+	private String busNumber;
 	private int capacity;
 	public Bus() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Bus(int busid, String bustype, String busnumber, int capacity) {
+	public Bus(int busId, String busType, String busNumber, int capacity) {
 		super();
-		this.busid = busid;
-		this.bustype = bustype;
-		this.busnumber = busnumber;
+		this.busId = busId;
+		this.busType = busType;
+		this.busNumber = busNumber;
 		this.capacity = capacity;
 	}
-	public int getBusid() {
-		return busid;
+	public int getbusId() {
+		return busId;
 	}
-	public void setBusid(int busid) {
-		this.busid = busid;
+	public void setbusId(int busId) {
+		this.busId = busId;
 	}
-	public String getBustype() {
-		return bustype;
+	public String getbusType() {
+		return busType;
 	}
-	public void setBustype(String bustype) {
-		this.bustype = bustype;
+	public void setbusType(String busType) {
+		this.busType = busType;
 	}
-	public String getBusnumber() {
-		return busnumber;
+	public String getbusNumber() {
+		return busNumber;
 	}
-	public void setBusnumber(String busnumber) {
-		this.busnumber = busnumber;
+	public void setbusNumber(String busNumber) {
+		this.busNumber = busNumber;
 	}
 	public int getCapacity() {
 		return capacity;
@@ -43,7 +43,7 @@ public class Bus {
 	}
 	@Override
 	public String toString() {
-		return "Bus [busid=" + busid + ", bustype=" + bustype + ", busnumber=" + busnumber + ", capacity=" + capacity
+		return "Bus [busid=" + busId + ", bustype=" + busType + ", busnumber=" + busNumber + ", capacity=" + capacity
 				+ "]";
 	}
 
