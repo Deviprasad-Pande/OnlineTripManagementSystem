@@ -1,60 +1,92 @@
-package com.cg.otms.entities;
+package com.cg.tms.entities;
 
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+/**
+ * 
+ * Feedback POJO class
+ * 
+ */
+@Entity
+@Table(name = "feedback")
 public class Feedback {
-	private String feedbackId;
-	private Customer customer;
-	private String feedback;
-	private  int rating;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	private String description;
+	private int rating;
 	private LocalDate submitDate;
+
+	@ManyToOne
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
+	private Customer customer;
+
+	// no-arg constructor
 	public Feedback() {
-		super();
-		// TODO Auto-generated constructor stub
+		this.submitDate = LocalDate.now();
 	}
-	public Feedback(String feedbackId, Customer customer, String feedback, int rating, LocalDate submitDate) {
-		super();
-		this.feedbackId = feedbackId;
-		this.customer = customer;
-		this.feedback = feedback;
+
+	// parameterized constructor
+	public Feedback(String description, int rating, Customer customer) {
+		this.description = description;
+		this.submitDate = LocalDate.now();
 		this.rating = rating;
-		this.submitDate = submitDate;
-	}
-	public String getFeedbackId() {
-		return feedbackId;
-	}
-	public void setFeedbackId(String feedbackId) {
-		this.feedbackId = feedbackId;
-	}
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public String getFeedback() {
-		return feedback;
+
+	// getters setters
+	public int getId() {
+		return id;
 	}
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public int getRating() {
 		return rating;
 	}
+
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+
 	public LocalDate getSubmitDate() {
 		return submitDate;
 	}
+
 	public void setSubmitDate(LocalDate submitDate) {
 		this.submitDate = submitDate;
 	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	@Override
 	public String toString() {
-		return "Feedback [feedbackId=" + feedbackId + ", customer=" + customer + ", feedback=" + feedback + ", rating="
-				+ rating + ", submitDate=" + submitDate + "]";
+		return "Feedback [id=" + id + ", description=" + description + ", rating=" + rating + ", submitDate="
+				+ submitDate + ", customer=" + customer + "]";
 	}
-	
-	
 }

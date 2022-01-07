@@ -1,56 +1,55 @@
-package com.cg.otms.entities;
+package com.cg.tms.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
+/**
+ *
+ * User POJO class
+ *
+ */
 @Entity
+@Table(name = "users_detail")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class User {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int userId;
-	
-	@Column(name = "user_type",nullable = false)
-	private String userType;
-	
-	@Column(name = "pass_word",nullable = false,length = 50)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String username;
 	private String password;
-	
+
+	// no-arg constructor
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
-	
-	public User(int userId, String userType, String password) {
-		super();
-		this.userId = userId;
-		this.userType = userType;
+	// parameterized constructor
+	public User(String username, String password) {
+		this.username = username;
 		this.password = password;
 	}
 
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", userType=" + userType + ", password=" + password + "]";
+	// getters - setters
+	public String getUsername() {
+		return username;
 	}
 
-	public int getUserId() {
-		return userId;
+	public int getId() {
+		return id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -60,7 +59,9 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + "]";
+	}
 }

@@ -1,80 +1,133 @@
-package com.cg.otms.entities;
+package com.cg.tms.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import com.cg.otms.entities.Travels;
-
+/**
+ * 
+ * Bus POJO class
+ * 
+ */
 @Entity
+@Table(name = "bus")
 public class Bus {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int busId;
-	
-	@Column(name="Bus Type",nullable=false)
-	private String busType;
-	
-	
-	@Column(name="Bus Number",nullable=false,unique=true,length=20)
-	private String busNumber;
-	
 
-	@Column(name="Capacity",nullable=false)
-	private int capacity;
-	
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="travels_id", table="Travels")
-	private Travels travel;
-	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	private String busNumber;
+	private int currentEmptySeat;
+	private String driver;
+	private String conductor;
+	private String dep;
+	private String arr;
+	private double amount;
+
+	@OneToMany
+	private List<Feedback> feedbacks;
+
+	// no-arg constructor
 	public Bus() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
-	public Bus(int busId, String busType, String busNumber, int capacity) {
+
+	// parameterized constructor
+	public Bus(String busNumber, int currentEmptySeat, String driver, String conductor, String dep, String arr,
+			double amount, List<Feedback> feedbacks) {
 		super();
-		this.busId = busId;
-		this.busType = busType;
 		this.busNumber = busNumber;
-		this.capacity = capacity;
+		this.currentEmptySeat = currentEmptySeat;
+		this.driver = driver;
+		this.conductor = conductor;
+		this.dep = dep;
+		this.arr = arr;
+		this.amount = amount;
+		this.feedbacks = feedbacks;
 	}
-	public int getbusId() {
-		return busId;
+
+	// getters setters
+	public int getId() {
+		return id;
 	}
-	public void setbusId(int busId) {
-		this.busId = busId;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getbusType() {
-		return busType;
-	}
-	public void setbusType(String busType) {
-		this.busType = busType;
-	}
-	public String getbusNumber() {
+
+	public String getBusNumber() {
 		return busNumber;
 	}
-	public void setbusNumber(String busNumber) {
+
+	public void setBusNumber(String busNumber) {
 		this.busNumber = busNumber;
 	}
-	public int getCapacity() {
-		return capacity;
-	}
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-	@Override
-	public String toString() {
-		return "Bus [busid=" + busId + ", bustype=" + busType + ", busnumber=" + busNumber + ", capacity=" + capacity
-				+ "]";
+
+	public String getDriver() {
+		return driver;
 	}
 
-	
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getConductor() {
+		return conductor;
+	}
+
+	public void setConductor(String conductor) {
+		this.conductor = conductor;
+	}
+
+	public String getDep() {
+		return dep;
+	}
+
+	public void setDep(String dep) {
+		this.dep = dep;
+	}
+
+	public String getArr() {
+		return arr;
+	}
+
+	public void setArr(String arr) {
+		this.arr = arr;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public List<Feedback> getFeedbacks() {
+		return feedbacks;
+	}
+
+	public void setFeedbacks(List<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
+	}
+
+	public int getCurrentEmptySeat() {
+		return currentEmptySeat;
+	}
+
+	public void setCurrentEmptySeat(int currentEmptySeat) {
+		this.currentEmptySeat = currentEmptySeat;
+	}
+
+	@Override
+	public String toString() {
+		return "Bus [id=" + id + ", busNumber=" + busNumber + ", currentEmptySeat=" + currentEmptySeat + ", driver="
+				+ driver + ", conductor=" + conductor + ", dep=" + dep + ", arr=" + arr + ", amount=" + amount
+				+ ", feedbacks=" + feedbacks + "]";
+	}
 }
