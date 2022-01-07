@@ -186,6 +186,12 @@ public class Route {
 				+ departureTime + ", arrivalTime=" + arrivalTime + ", doj=" + doj + ", pickupPoint=" + pickupPoint
 				+ ", fare=" + fare + "]";
 	}
+	public List<Bus> getBuses() {
+		return buses;
+	}
+	public void setBuses(List<Bus> buses) {
+		this.buses = buses;
+	}
 	
 	
 }
