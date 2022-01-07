@@ -1,9 +1,28 @@
 package com.cg.otms.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int userId;
+	
+	@Column(name = "user_type",nullable = false)
 	private String userType;
+	
+	@Column(name = "pass_word",nullable = false,length = 50)
 	private String password;
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	
 	public User(int userId, String userType, String password) {
 		super();
@@ -12,10 +31,6 @@ public class User {
 		this.password = password;
 	}
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public String toString() {
