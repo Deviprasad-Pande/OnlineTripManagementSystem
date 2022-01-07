@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Feedback {
-
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	

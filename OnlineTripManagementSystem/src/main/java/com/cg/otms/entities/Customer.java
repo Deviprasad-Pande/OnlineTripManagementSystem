@@ -14,6 +14,7 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 	private  int customerId;
 
 	@Column(name = "customer_name",nullable = false,length = 25)
