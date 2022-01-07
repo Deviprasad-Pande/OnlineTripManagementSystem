@@ -1,5 +1,6 @@
 package com.cg.otms.entities;
 
+
 public class Admin {
 	private int  adminId;
 	private String adminName;
@@ -7,6 +8,10 @@ public class Admin {
 	private String email;
 	private  String mobile;
 	
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	public Admin(int adminId, String adminName, String password, String email, String mobile) {
@@ -88,10 +93,6 @@ public class Admin {
 
 
 
-	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 	
