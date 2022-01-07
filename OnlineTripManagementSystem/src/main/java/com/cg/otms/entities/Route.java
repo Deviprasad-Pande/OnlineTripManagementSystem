@@ -3,8 +3,6 @@ package com.cg.otms.entities;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import antlr.collections.List;
-
 public class Route {
 	private String routeId;
 	private String  routeFrom;
