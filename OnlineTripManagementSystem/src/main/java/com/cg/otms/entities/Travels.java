@@ -1,11 +1,32 @@
 package com.cg.otms.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Travels {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int travelsId;
+	@Column(name="travels_name",nullable=false,length=50)
 	private String travelsName;
+	@Column(name="agent_name",nullable=false,length=50)
 	private String  agentName;
+	@Column(name="addr",nullable=false,length=50)
 	private String  address;
+	@Column(name="contact",nullable=false,unique=true,length=10)
 	private String  contact;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="user_id",table="User")
+	private User user;
+	
 	public Travels() {
 		super();
 		// TODO Auto-generated constructor stub
