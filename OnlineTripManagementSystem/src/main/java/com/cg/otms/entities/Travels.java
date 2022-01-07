@@ -1,16 +1,16 @@
 package com.cg.otms.entities;
 
-public class Travel {
+public class Travels {
 	private int travelsId;
 	private String travelsName;
 	private String  agentName;
 	private String  address;
 	private String  contact;
-	public Travel() {
+	public Travels() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Travel(int travelsId, String travelsName, String agentName, String address, String contact) {
+	public Travels(int travelsId, String travelsName, String agentName, String address, String contact) {
 		super();
 		this.travelsId = travelsId;
 		this.travelsName = travelsName;
