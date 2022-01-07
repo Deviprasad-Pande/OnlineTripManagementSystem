@@ -1,7 +1,7 @@
-package com.cg.tms.repositories;
+package com.cg.otms.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.cg.tms.entities.Bus;
+import com.cg.otms.entities.Bus;
 
 public interface IBusRepository extends JpaRepository<Bus, Integer> {
 

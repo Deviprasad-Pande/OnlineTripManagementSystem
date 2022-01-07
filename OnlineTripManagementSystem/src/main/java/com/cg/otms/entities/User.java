@@ -1,4 +1,4 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

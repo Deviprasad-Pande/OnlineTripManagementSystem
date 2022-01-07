@@ -1,9 +1,9 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cg.tms.entities.Admin;
-import com.cg.tms.repositories.IAdminRepository;
+import com.cg.otms.entities.Admin;
+import com.cg.otms.repositories.IAdminRepository;
 
 /**
  * 

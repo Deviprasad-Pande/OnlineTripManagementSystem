@@ -1,8 +1,8 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 
-import com.cg.tms.entities.Category;
+import com.cg.otms.entities.Category;
 
 public interface ICategoryService {
 

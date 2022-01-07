@@ -1,11 +1,11 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cg.tms.entities.Bus;
-import com.cg.tms.exceptions.BusNotFoundException;
-import com.cg.tms.repositories.IBusRepository;
+import com.cg.otms.entities.Bus;
+import com.cg.otms.exceptions.BusNotFoundException;
+import com.cg.otms.repositories.IBusRepository;
 
 /**
  * 

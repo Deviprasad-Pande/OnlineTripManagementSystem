@@ -1,9 +1,9 @@
 
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 
-import com.cg.tms.entities.Station;
+import com.cg.otms.entities.Station;
 
 public interface IStationService {
 

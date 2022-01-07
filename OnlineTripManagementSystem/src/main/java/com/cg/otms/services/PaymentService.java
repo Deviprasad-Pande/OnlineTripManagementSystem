@@ -1,4 +1,4 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 /**
  * to Handle Payment Gateway

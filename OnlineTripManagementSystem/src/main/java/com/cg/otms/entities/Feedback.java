@@ -1,4 +1,4 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;
@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-<<<<<<< HEAD
 /**
  * 
  * Feedback POJO class
@@ -17,19 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "feedback")
-=======
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
-@Entity
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 public class Feedback {
-<<<<<<< HEAD
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,16 +24,6 @@ public class Feedback {
 
 	private String description;
 	private int rating;
-=======
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String feedbackId;
-	private Customer customer;
-	private String feedback;
-	private  int rating;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="feedback_id",table = "Feedback")
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 	private LocalDate submitDate;
 
 	@ManyToOne

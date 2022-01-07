@@ -1,10 +1,10 @@
-package com.cg.tms.repositories;
+package com.cg.otms.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cg.tms.entities.Route;
+import com.cg.otms.entities.Route;
 
 public interface IRouteRepository extends JpaRepository<Route, Integer> {
 

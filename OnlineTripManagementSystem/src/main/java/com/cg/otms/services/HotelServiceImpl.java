@@ -1,13 +1,13 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.tms.entities.Hotel;
-import com.cg.tms.exceptions.HotelNotFoundException;
-import com.cg.tms.repositories.IHotelRepository;
+import com.cg.otms.entities.Hotel;
+import com.cg.otms.exceptions.HotelNotFoundException;
+import com.cg.otms.repositories.IHotelRepository;
 
 /**
  * 

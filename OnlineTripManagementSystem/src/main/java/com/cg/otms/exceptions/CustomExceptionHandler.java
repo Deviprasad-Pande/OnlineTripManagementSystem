@@ -1,4 +1,4 @@
-package com.cg.tms.exceptions;
+package com.cg.otms.exceptions;
 
 import java.util.Date;
 

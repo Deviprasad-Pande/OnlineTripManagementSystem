@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.otms.entities.Bus;
-import com.cg.tms.services.BusServiceImpl;
-import com.cg.tms.services.IBusService;
+import com.cg.otms.services.BusServiceImpl;
+import com.cg.otms.services.IBusService;
 
 /**
  * 

@@ -1,8 +1,8 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 
-import com.cg.tms.entities.Customer;
+import com.cg.otms.entities.Customer;
 
 public interface ICustomerService {
 

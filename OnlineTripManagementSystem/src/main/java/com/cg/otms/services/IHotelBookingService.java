@@ -1,9 +1,9 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.cg.tms.entities.HotelBooking;
+import com.cg.otms.entities.HotelBooking;
 
 public interface IHotelBookingService {
 

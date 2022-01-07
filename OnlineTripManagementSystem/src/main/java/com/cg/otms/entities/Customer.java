@@ -1,6 +1,5 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
-<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -15,50 +14,12 @@ import javax.persistence.Table;
 public class Customer extends User {
 
 	private String name;
-=======
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
-@Entity
-public class Customer {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	
-	private  int customerId;
-
-	@Column(name = "customer_name",nullable = false,length = 25)
-	private String customerName;
-	@Column(name = "pass_word",nullable = false,length = 15)
-	private String  customerPassword;
-
-	@Column(name = "addr",nullable = false,length = 100)
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 	private String address;
-
-	@Column(name = "mobile_no.",nullable = false,unique=true,length = 10)
 	private String mobileNo;
-<<<<<<< HEAD
 	@Column(nullable = false, unique = true)
-=======
-
-	@Column(name = "e_mail",nullable = false,unique=true,length = 50)
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 	private String email;
-<<<<<<< HEAD
 
 	// no-arg constructor
-=======
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="userId",table = "User")
-	private User user;
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 	public Customer() {
 
 	}
@@ -110,17 +71,4 @@ public class Customer {
 		return "Customer [id=" + super.getId() + ", name=" + name + ", address=" + address + ", mobileNo=" + mobileNo
 				+ ", email=" + email + "]";
 	}
-<<<<<<< HEAD
-=======
-	public Customer(int customerId, String customerName, String customerPassword, String address, String mobileNo,
-			String email) {
-		super();
-		this.customerId = customerId;
-		this.customerName = customerName;
-		this.customerPassword = customerPassword;
-		this.address = address;
-		this.mobileNo = mobileNo;
-		this.email = email;
-	}
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 }

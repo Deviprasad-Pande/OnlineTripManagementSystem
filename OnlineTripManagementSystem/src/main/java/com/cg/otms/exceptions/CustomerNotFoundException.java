@@ -1,4 +1,4 @@
-package com.cg.tms.exceptions;
+package com.cg.otms.exceptions;
 
 /**
  * Custom Exception class to handle Customer related exceptions

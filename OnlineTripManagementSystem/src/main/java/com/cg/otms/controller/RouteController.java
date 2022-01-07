@@ -1,4 +1,4 @@
-package com.cg.tms.controller;
+package com.cg.otms.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.tms.entities.Route;
-import com.cg.tms.services.IRouteService;
+import com.cg.otms.entities.Route;
+import com.cg.otms.services.IRouteService;
 
 /**
  * 

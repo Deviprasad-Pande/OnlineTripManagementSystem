@@ -1,4 +1,4 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
 import java.util.List;
 import javax.persistence.Entity;

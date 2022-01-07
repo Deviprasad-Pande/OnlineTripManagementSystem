@@ -1,4 +1,4 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;
@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.cg.otms.entities.Customer;
 
 /**
  * 

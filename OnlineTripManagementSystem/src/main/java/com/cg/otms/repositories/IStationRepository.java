@@ -1,8 +1,8 @@
-package com.cg.tms.repositories;
+package com.cg.otms.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cg.tms.entities.Station;
+import com.cg.otms.entities.Station;
 
 public interface IStationRepository extends JpaRepository<Station, Integer> {
 

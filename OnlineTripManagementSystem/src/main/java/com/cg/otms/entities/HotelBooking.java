@@ -1,4 +1,4 @@
-package com.cg.tms.entities;
+package com.cg.otms.entities;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;

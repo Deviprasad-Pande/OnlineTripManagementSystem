@@ -1,11 +1,11 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cg.tms.entities.Customer;
-import com.cg.tms.exceptions.CustomerNotFoundException;
-import com.cg.tms.repositories.ICustomerRepository;
+import com.cg.otms.entities.Customer;
+import com.cg.otms.exceptions.CustomerNotFoundException;
+import com.cg.otms.repositories.ICustomerRepository;
 
 /**
  * 

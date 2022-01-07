@@ -1,11 +1,11 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cg.tms.entities.Category;
-import com.cg.tms.exceptions.CategoryNotFoundException;
-import com.cg.tms.repositories.ICategoryRepository;
+import com.cg.otms.entities.Category;
+import com.cg.otms.exceptions.CategoryNotFoundException;
+import com.cg.otms.repositories.ICategoryRepository;
 
 /**
  * 

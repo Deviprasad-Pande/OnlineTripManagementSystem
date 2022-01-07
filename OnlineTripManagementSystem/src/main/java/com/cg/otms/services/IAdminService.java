@@ -1,6 +1,6 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
-import com.cg.tms.entities.Admin;
+import com.cg.otms.entities.Admin;
 
 public interface IAdminService {
 

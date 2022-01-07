@@ -1,11 +1,11 @@
-package com.cg.tms.services;
+package com.cg.otms.services;
 
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cg.tms.entities.PackageBooking;
-import com.cg.tms.repositories.IPackageBookingRepository;
+import com.cg.otms.entities.PackageBooking;
+import com.cg.otms.repositories.IPackageBookingRepository;
 
 /**
  * 
