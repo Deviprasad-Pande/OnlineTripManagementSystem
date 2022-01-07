@@ -12,8 +12,7 @@ public class Admin {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public Admin(int adminId, String adminName, String password, String email, String mobile) {
 		super();
 		this.adminId = adminId;
@@ -93,7 +92,4 @@ public class Admin {
 
 
 
-	
-	
-	
 }
