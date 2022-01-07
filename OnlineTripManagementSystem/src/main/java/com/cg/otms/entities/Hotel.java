@@ -1,13 +1,33 @@
 package com.cg.otms.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Hotel {
-	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int hotelId ;
+
+    @Column(name = "hotel_name",nullable = false,unique=true)
 	private String hotelName;
+
+    @Column(name = "hotel_type",nullable = false)
 	private String hotelType;
+    
 	private String hotelDescription;
+
+    @Column(name = "add_ress",nullable = false,length = 100)
 	private String address;
+
+    @Column(name = "re_nt",nullable = false)
 	private double rent;
+
+    @Column(name = "status",nullable = false)
 	private String status;
 	
 	@Override
