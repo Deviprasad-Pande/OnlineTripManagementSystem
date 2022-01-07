@@ -1,13 +1,42 @@
 package com.cg.otms.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class PaymentDetails {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private  int paymentId;
+	
+	
+	@Column(name="payment_mode",nullable=false)
 	private  String paymentMode;
+	
+	
+	@Column(name="bank_name", length=25,unique=true, nullable =false)
 	private  String bankName;
+	
+	
+	@Column(name="card_no",unique=true, length=25)
 	private  long  cardNo;
+	
+	
+	@Column(name="net_amt", nullable=false)
 	private double   netAmount;
+	
+	
+	@Column(name="payment_status", nullable=false)
 	private  String  paymentStatus;
+	
+
+	@Column(name="user_id")
 	private  int userId;
+	
 	public PaymentDetails() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -71,6 +100,5 @@ public class PaymentDetails {
 				+ ", cardNo=" + cardNo + ", netAmount=" + netAmount + ", paymentStatus=" + paymentStatus + ", userId="
 				+ userId + "]";
 	}
-	
-	
+
 }

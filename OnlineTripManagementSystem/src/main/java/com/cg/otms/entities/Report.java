@@ -1,9 +1,34 @@
 package com.cg.otms.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+
+
+@Entity
 public class Report {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int reportId;
+	
+	
+    @Column(name = "report_name",nullable = false,length = 50)
 	private String reportName;
+	
+	
+    @Column(name = "report_type",nullable = false)
 	private String reportType;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="admin_id",table = "Admin")
+	private Admin admin;
+	
 	public Report() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -36,6 +61,5 @@ public class Report {
 	public String toString() {
 		return "Report [reportId=" + reportId + ", reportName=" + reportName + ", reportType=" + reportType + "]";
 	}
-	
-	
+
 }

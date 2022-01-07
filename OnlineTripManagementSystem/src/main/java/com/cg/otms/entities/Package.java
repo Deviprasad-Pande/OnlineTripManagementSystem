@@ -1,14 +1,51 @@
 package com.cg.otms.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+
+
+@Entity
 public class Package {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int packageId;
+	
+	
+	@Column(name="package_name", length=25)
 	private String packageName;
+	
+	
+	@Column(name="package_description", length=50)
 	private String packageDescription;
+	
+	
+	@Column(name="package_type", length=50)
 	private String packageType;
+	
+	
+	@Column(name="package_cost")
 	private double packageCost;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="payment_id", referencedColumnName="packageId")
 	private  PaymentDetails  payment;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="ticket_id", referencedColumnName="ticketId")
 	private TicketDetails ticket;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="hotel_id", referencedColumnName="hotelId")
 	private Hotel hotel;
+	
 	public Package() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -25,6 +62,7 @@ public class Package {
 		this.ticket = ticket;
 		this.hotel = hotel;
 	}
+	
 	public int getPackageId() {
 		return packageId;
 	}
@@ -76,9 +114,10 @@ public class Package {
 	@Override
 	public String toString() {
 		return "Package [packageId=" + packageId + ", packageName=" + packageName + ", packageDescription="
-				+ packageDescription + ", packageType=" + packageType + ", packageCost=" + packageCost + ", ticket="
-				+ ticket + ", hotel=" + hotel + "]";
+				+ packageDescription + ", packageType=" + packageType + ", packageCost=" + packageCost + ", payment="
+				+ payment + ", ticket=" + ticket + ", hotel=" + hotel + "]";
 	}
 	
-	
+
 }
+
