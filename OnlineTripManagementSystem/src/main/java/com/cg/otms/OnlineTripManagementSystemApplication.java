@@ -15,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan
 @SpringBootApplication
 @EnableScheduling
-
 @EnableSwagger2
 public class OnlineTripManagementSystemApplication {
 
