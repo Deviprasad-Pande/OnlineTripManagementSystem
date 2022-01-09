@@ -1,15 +1,14 @@
 package com.cg.otms.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * 
- * Admin POJO class
- * 
- */
-@Entity
-<<<<<<< HEAD
+
+  /*@Entity
 public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,14 +19,14 @@ public class Admin {
 	@Column(name = "pass_word",nullable = false,length = 10)
 	private String password;
 	@Column(name = "email",nullable = false,unique = true,length = 50)
-=======
-@Table(name = "admin_details")
-public class Admin extends User {
+    @Table(name = "admin_details")
+    */
+   public class Admin extends User {
 
 	private String name;
 	private String address;
 	private String mobileNo;
->>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
+
 	private String email;
 
 	// no-arg constructor
