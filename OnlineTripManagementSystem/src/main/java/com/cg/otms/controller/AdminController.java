@@ -21,7 +21,7 @@ import com.cg.otms.services.IAdminService;
 @CrossOrigin("*")
 public class AdminController {
 
-	@Autowired
+	@Autowired   
 	private IAdminService adminService;
 
 	@GetMapping("/validateadmin/{username}/{password}")
