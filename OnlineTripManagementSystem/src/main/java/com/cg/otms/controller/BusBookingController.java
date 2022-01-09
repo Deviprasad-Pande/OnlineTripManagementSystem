@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.otms.entities.BusBooking;
-import com.cg.otms.services.BusBookingServiceImpl;
 import com.cg.otms.services.IBusBookingService;
 
 /**
