@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.otms.entities.Admin;
-import com.cg.otms.services.AdminServiceImpl;
 import com.cg.otms.services.IAdminService;
 
 /**
@@ -22,7 +21,7 @@ import com.cg.otms.services.IAdminService;
 @CrossOrigin("*")
 public class AdminController {
 
-	@Autowired
+	@Autowired   
 	private IAdminService adminService;
 
 	@GetMapping("/validateadmin/{username}/{password}")

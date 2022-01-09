@@ -10,8 +10,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.cg.otms.entities.Hotel;
-
 /**
  * 
  * Package POJO class
