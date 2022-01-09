@@ -1,121 +1,150 @@
 package com.cg.otms.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import com.cg.otms.entities.Hotel;
 
+/**
+ * 
+ * Package POJO class
+ * 
+ */
 @Entity
+@Table(name = "Package")
 public class Package {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int packageId;
-	
-	
-	@Column(name="package_name", length=25)
-	private String packageName;
-	
-	
-	@Column(name="package_description", length=50)
-	private String packageDescription;
-	
-	
-	@Column(name="package_type", length=50)
-	private String packageType;
-	
-	
-	@Column(name="package_cost")
-	private double packageCost;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="payment_id", referencedColumnName="packageId")
-	private  PaymentDetails  payment;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="ticket_id", referencedColumnName="ticketId")
-	private TicketDetails ticket;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="hotel_id", referencedColumnName="hotelId")
-	private Hotel hotel;
-	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	private String name;
+	private String destination;
+	private String duration;
+	private String description;
+	private double price;
+	private String profile;
+
+	@ManyToMany
+	private List<Category> categories;
+
+	@ManyToMany
+	private List<Hotel> hotels;
+
+	@OneToMany
+	private List<Feedback> feedbacks;
+
+	// no-arg constructor
 	public Package() {
+
+	}
+
+	// parameterized constructor
+	public Package(String name, String destination, String duration, String description, double price,String profile,
+			List<Category> categories, List<Hotel> hotels, List<Feedback> feedbacks) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.destination = destination;
+		this.duration = duration;
+		this.description = description;
+		this.price = price;
+		this.profile = profile;
+		this.categories = categories;
+		this.hotels = hotels;
+		this.feedbacks = feedbacks;
 	}
-	public Package(int packageId, String packageName, String packageDescription, String packageType, double packageCost,
-			PaymentDetails payment, TicketDetails ticket, Hotel hotel) {
-		super();
-		this.packageId = packageId;
-		this.packageName = packageName;
-		this.packageDescription = packageDescription;
-		this.packageType = packageType;
-		this.packageCost = packageCost;
-		this.payment = payment;
-		this.ticket = ticket;
-		this.hotel = hotel;
+
+	// getter setters
+	public int getId() {
+		return id;
 	}
-	
-	public int getPackageId() {
-		return packageId;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setPackageId(int packageId) {
-		this.packageId = packageId;
+
+	public String getName() {
+		return name;
 	}
-	public String getPackageName() {
-		return packageName;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setPackageName(String packageName) {
-		this.packageName = packageName;
+
+	public String getDestination() {
+		return destination;
 	}
-	public String getPackageDescription() {
-		return packageDescription;
+
+	public void setDestination(String destination) {
+		this.destination = destination;
 	}
-	public void setPackageDescription(String packageDescription) {
-		this.packageDescription = packageDescription;
+
+	public String getDuration() {
+		return duration;
 	}
-	public String getPackageType() {
-		return packageType;
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
+
+	public String getDescription() {
+		return description;
 	}
-	public double getPackageCost() {
-		return packageCost;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public void setPackageCost(double packageCost) {
-		this.packageCost = packageCost;
+
+	public double getPrice() {
+		return price;
 	}
-	public PaymentDetails getPayment() {
-		return payment;
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
-	public void setPayment(PaymentDetails payment) {
-		this.payment = payment;
+
+	public List<Category> getCategories() {
+		return categories;
 	}
-	public TicketDetails getTicket() {
-		return ticket;
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
-	public void setTicket(TicketDetails ticket) {
-		this.ticket = ticket;
+
+	public List<Hotel> getHotels() {
+		return hotels;
 	}
-	public Hotel getHotel() {
-		return hotel;
+
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
 	}
-	public void setHotel(Hotel hotel) {
-		this.hotel = hotel;
+
+	public List<Feedback> getFeedbacks() {
+		return feedbacks;
 	}
+
+	public void setFeedbacks(List<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
 	@Override
 	public String toString() {
-		return "Package [packageId=" + packageId + ", packageName=" + packageName + ", packageDescription="
-				+ packageDescription + ", packageType=" + packageType + ", packageCost=" + packageCost + ", payment="
-				+ payment + ", ticket=" + ticket + ", hotel=" + hotel + "]";
+		return "Package [id=" + id + ", name=" + name + ", destination=" + destination + ", duration=" + duration
+				+ ", description=" + description + ", price=" + price + "]";
 	}
-
 }
-

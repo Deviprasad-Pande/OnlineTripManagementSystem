@@ -1,15 +1,15 @@
 package com.cg.otms.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+/**
+ * 
+ * Admin POJO class
+ * 
+ */
 @Entity
+<<<<<<< HEAD
 public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,95 +20,66 @@ public class Admin {
 	@Column(name = "pass_word",nullable = false,length = 10)
 	private String password;
 	@Column(name = "email",nullable = false,unique = true,length = 50)
+=======
+@Table(name = "admin_details")
+public class Admin extends User {
+
+	private String name;
+	private String address;
+	private String mobileNo;
+>>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 	private String email;
-	@Column(name = "contact_no",nullable = false,unique = true,length = 50)
-	private  String mobile;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="user_id",table = "User")
-	private User user;
+
+	// no-arg constructor
 	public Admin() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
-	public Admin(int adminId, String adminName, String password, String email, String mobile) {
-		super();
-		this.adminId = adminId;
-		this.adminName = adminName;
-		this.password = password;
+	// parameterized constructor
+	public Admin(String name, String address, String mobileNo, String email, String username, String password) {
+		super(username, password);
+		this.name = name;
+		this.address = address;
+		this.mobileNo = mobileNo;
 		this.email = email;
-		this.mobile = mobile;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "Admin [adminId=" + adminId + ", adminName=" + adminName + ", password=" + password + ", email=" + email
-				+ ", mobile=" + mobile + "]";
+	// getter and setter
+	public String getName() {
+		return name;
 	}
 
-
-
-	public int getAdminId() {
-		return adminId;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-
-
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
+	public String getAddress() {
+		return address;
 	}
 
-
-
-	public String getAdminName() {
-		return adminName;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-
-
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
+	public String getMobileNo() {
+		return mobileNo;
 	}
 
-
-
-	public String getPassword() {
-		return password;
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
-
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
-	public String getMobile() {
-		return mobile;
+	@Override
+	public String toString() {
+		return "Customer [id=" + super.getId() + ", name=" + name + ", address=" + address + ", mobileNo=" + mobileNo
+				+ ", email=" + email + "]";
 	}
-
-
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
-
-
 }

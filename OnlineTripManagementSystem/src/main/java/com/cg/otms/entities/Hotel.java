@@ -1,68 +1,66 @@
 package com.cg.otms.entities;
 
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+/**
+ * 
+ * Hotel POJO class
+ * 
+ */
 @Entity
+@Table(name = "hotel")
 public class Hotel {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int hotelId ;
-    @Column(name = "hotel_name",nullable = false,unique=true)
-	private String hotelName;
-    @Column(name = "hotel_type",nullable = false)
-	private String hotelType;
-    
-	private String hotelDescription;
-    @Column(name = "add_ress",nullable = false,length = 100)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	private String name;
 	private String address;
-
-    @Column(name = "re_nt",nullable = false)
+	private String description;
 	private double rent;
-
-    @Column(name = "status",nullable = false)
-	private String status;
+	private String profile;
 	
-	@Override
-	public String toString() {
-		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelType=" + hotelType
-				+ ", hotelDescription=" + hotelDescription + ", address=" + address + ", rent=" + rent + ", status="
-				+ status + "]";
+	@OneToMany
+	private List<Feedback> feedbacks;
+
+	// no-arg constructor
+	public Hotel() {
+
 	}
 
-	public int getHotelId() {
-		return hotelId;
+	// parameterized constructor
+	public Hotel(String name, String address, String description, double rent,String profile, List<Feedback> feedbacks) {
+		this.name = name;
+		this.address = address;
+		this.description = description;
+		this.rent = rent;
+		this.profile = profile;
+		this.feedbacks = feedbacks;
 	}
 
-	public void setHotelId(int hotelId) {
-		this.hotelId = hotelId;
+	// getters setters
+	public int getId() {
+		return id;
 	}
 
-	public String getHotelName() {
-		return hotelName;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
+	public String getName() {
+		return name;
 	}
 
-	public String getHotelType() {
-		return hotelType;
-	}
-
-	public void setHotelType(String hotelType) {
-		this.hotelType = hotelType;
-	}
-
-	public String getHotelDescription() {
-		return hotelDescription;
-	}
-
-	public void setHotelDescription(String hotelDescription) {
-		this.hotelDescription = hotelDescription;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAddress() {
@@ -73,6 +71,14 @@ public class Hotel {
 		this.address = address;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public double getRent() {
 		return rent;
 	}
@@ -80,32 +86,21 @@ public class Hotel {
 	public void setRent(double rent) {
 		this.rent = rent;
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Hotel(int hotelId, String hotelName, String hotelType, String hotelDescription, String address, double rent,
-			String status) {
-		super();
-		this.hotelId = hotelId;
-		this.hotelName = hotelName;
-		this.hotelType = hotelType;
-		this.hotelDescription = hotelDescription;
-		this.address = address;
-		this.rent = rent;
-		this.status = status;
-	}
-
-	public Hotel() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	@Override
+	public String toString() {
+		return "Hotel [id=" + id + ", name=" + name + ", address=" + address + ", description=" + description
+				+ ", rent=" + rent + "]";
+	}
 
 }
