@@ -14,6 +14,7 @@ public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int  adminId;
+	
 	@Column(name = "name",nullable = false,length = 50)
 	private String adminName;
 	@Column(name = "pass_word",nullable = false,length = 10)

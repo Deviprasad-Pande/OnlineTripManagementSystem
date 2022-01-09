@@ -116,7 +116,6 @@ public class Package {
 				+ packageDescription + ", packageType=" + packageType + ", packageCost=" + packageCost + ", payment="
 				+ payment + ", ticket=" + ticket + ", hotel=" + hotel + "]";
 	}
-	
 
 }
 
