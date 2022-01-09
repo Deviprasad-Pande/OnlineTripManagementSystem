@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.SpringVersion;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -22,7 +21,7 @@ public class OnlineTripManagementSystemApplication {
 		
 		 SpringApplication otms =new SpringApplication(OnlineTripManagementSystemApplication.class);
 	
-		System.out.println("Spring Core Version:- " + SpringVersion.getVersion());
+	//	System.out.println("Spring Core Version:- " + SpringVersion.getVersion());
 	     
 		 otms.run(args);
 		
