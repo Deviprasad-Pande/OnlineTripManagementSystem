@@ -31,7 +31,7 @@ public class RouteController {
 
 	@PostMapping("/addroute")
 	public ResponseEntity<Route> addRoute(@RequestBody Route route) {
-		return new ResponseEntity(routeService.addRoute(route),HttpStatus.OK);
+		return new ResponseEntity<Route>(routeService.addRoute(route),HttpStatus.OK);
 	}
 
 	@GetMapping("/getroutes")
@@ -47,7 +47,7 @@ public class RouteController {
 
 	@PutMapping("/updateroute")
 	public ResponseEntity<Route> updateRoute(@RequestBody Route route) {
-		return new ResponseEntity(routeService.updateRoute(route),HttpStatus.OK);
+		return new ResponseEntity<Route>(routeService.updateRoute(route),HttpStatus.OK);
 	}
 	@DeleteMapping("/deleteroutebyid/{id}")
 	public String deleteRoute(@PathVariable int id) {
