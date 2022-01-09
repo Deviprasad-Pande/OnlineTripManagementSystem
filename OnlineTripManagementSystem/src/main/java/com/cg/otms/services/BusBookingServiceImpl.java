@@ -72,11 +72,16 @@ public class BusBookingServiceImpl implements IBusBookingService {
 	 * @param id of integer type
 	 * @return message after deletion
 	 */
+	
+	/*
 	public String deleteBusBooking(int id) {
 		// below statements will update current empty seats in Bus
 
 		Optional<BusBooking> busBookingOpt = busBookingRepository.findById(id);
-		if (!busBookingOpt.isEmpty()) {
+		if (!busBookingOpt.isEmpty()) 
+			
+			
+		{
 			BusBooking busBooing = busBookingOpt.get();
 			busBooing.getBus().setCurrentEmptySeat(busBooing.getBus().getCurrentEmptySeat() + busBooing.getNoOfPass());
 			busServiceImpl.updateBus(busBooing.getBus());
@@ -84,7 +89,7 @@ public class BusBookingServiceImpl implements IBusBookingService {
 		busBookingRepository.deleteById(id);
 		return "Ticket Deleted !!!";
 	}
-
+/*
 	/**
 	 * to get BusBooking based on BusBooking Id
 	 * 
@@ -123,5 +128,11 @@ public class BusBookingServiceImpl implements IBusBookingService {
 	 */
 	public List<BusBooking> getBusBookingByJourneyDate(String date) {
 		return busBookingRepository.findByJourneyDate(date);
+	}
+
+	@Override
+	public String deleteBusBooking(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
