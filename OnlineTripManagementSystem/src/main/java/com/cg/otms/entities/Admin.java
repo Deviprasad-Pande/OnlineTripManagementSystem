@@ -6,7 +6,7 @@ import javax.persistence.Table;
 /**
  * 
  * Admin POJO class
- * 
+ * done
  */
 @Entity
 @Table(name = "admin_details")
