@@ -57,11 +57,11 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param id of integer type
 	 * 
 	 */
-	public String delete(int id) {
+	public Customer delete(int id) {
 		Customer customer = customerRepository.findById(id).orElseThrow(
 				() -> new CustomerNotFoundException("Cannot delete, No cusotmer with id: " + id + " found!!"));
 		customerRepository.deleteById(customer.getId());
-		return "Customer with id: " + id + " deleted!!";
+		return customer;
 
 	}
 
