@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 
 //@Table(name = "admin_details")
-public class Admin extends User {
+public class Admin extends IUser {
 
 	private String name;
 	private String address;
