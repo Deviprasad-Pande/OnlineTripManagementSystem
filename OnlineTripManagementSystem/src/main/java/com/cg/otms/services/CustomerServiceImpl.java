@@ -46,7 +46,11 @@ public class CustomerServiceImpl implements ICustomerService {
 	
 	
 	public Customer updateCustomer(Customer customer) {
+<<<<<<< HEAD
 	customerRepository.findById(null);
+=======
+	customerRepository.findById(customer.getId());
+>>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
 		
 		return customerRepository.save(customer);
 	}
