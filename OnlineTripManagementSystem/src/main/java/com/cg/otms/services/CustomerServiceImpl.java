@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.cg.otms.entities.Customer;
 import com.cg.otms.exceptions.CustomerNotFoundException;
 import com.cg.otms.repositories.ICustomerRepository;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 /**
  * 
@@ -42,7 +43,15 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param customer
 	 * @return updated Customer
 	 */
+	
+	
 	public Customer updateCustomer(Customer customer) {
+<<<<<<< HEAD
+	customerRepository.findById(null);
+=======
+	customerRepository.findById(customer.getId());
+>>>>>>> branch 'master' of https://github.com/Deviprasad-Pande/OnlineTripManagementSystem.git
+		
 		return customerRepository.save(customer);
 	}
 
@@ -52,11 +61,11 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param id of integer type
 	 * 
 	 */
-	public String delete(int id) {
+	public Customer delete(int id) {
 		Customer customer = customerRepository.findById(id).orElseThrow(
 				() -> new CustomerNotFoundException("Cannot delete, No cusotmer with id: " + id + " found!!"));
 		customerRepository.deleteById(customer.getId());
-		return "Customer with id: " + id + " deleted!!";
+		return customer;
 
 	}
 
@@ -91,7 +100,12 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param password of String type
 	 * @return true if Customer is found with same user name and password.
 	 */
-	public boolean validateCustomerByUsernameandPassword(String username, String password) {
-		return customerRepository.findByUsernameAndPassword(username, password) != null;
+	public Customer validateCustomerByUsernameandPassword(String username, String password) {
+		Customer customer = customerRepository.findByUsernameAndPassword(username,password);
+		if(customer == null)
+		{
+			throw new CustomerNotFoundException("Invalid username or password");
+		}else
+			return customer;
 	}
 }

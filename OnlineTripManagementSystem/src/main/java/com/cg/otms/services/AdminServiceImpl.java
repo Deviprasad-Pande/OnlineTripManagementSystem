@@ -3,6 +3,7 @@ package com.cg.otms.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.otms.entities.Admin;
+import com.cg.otms.exceptions.CustomerNotFoundException;
 import com.cg.otms.repositories.IAdminRepository;
 
 /**
@@ -31,8 +32,16 @@ public class AdminServiceImpl implements IAdminService {
 	 * @param password
 	 * @return true if username and password is correct
 	 */
-	public boolean isValidAdmin(String username, String password) {
-		return adminRepository.findByUsernameAndPassword(username, password) != null;
+	public Admin isValidAdmin(String username, String password) {
+		Admin admin = adminRepository.findByUsernameAndPassword(username, password);
+	if (admin!= null) {
+		return admin;
+	}
+	else {
+		throw new CustomerNotFoundException("invalid user and password");
+		
+	}
+	
 	}
 
 }
