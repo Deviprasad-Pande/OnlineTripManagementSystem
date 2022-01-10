@@ -1,7 +1,10 @@
 package com.cg.otms.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 
@@ -9,7 +12,12 @@ import javax.persistence.Table;
  * done
  */
 @Entity
-@Table(name = "admin_details")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+
+//@Table(name = "admin_details")
 public class Admin extends User {
 
 	private String name;
@@ -17,56 +25,10 @@ public class Admin extends User {
 	private String mobileNo;
 	private String email;
 
-	// no-arg constructor
-	public Admin() {
+//    private String password;
 
-	}
 
-	// parameterized constructor
-	public Admin(String name, String address, String mobileNo, String email, String username, String password) {
-		super(username, password);
-		this.name = name;
-		this.address = address;
-		this.mobileNo = mobileNo;
-		this.email = email;
-	}
-
-	// getter and setter
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getMobileNo() {
-		return mobileNo;
-	}
-
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + super.getId() + ", name=" + name + ", address=" + address + ", mobileNo=" + mobileNo
-				+ ", email=" + email + "]";
-	}
+	
+	
+	
 }

@@ -6,5 +6,5 @@ public interface IAdminService {
 
 	public Admin addAdmin(Admin admin);
 
-	public boolean isValidAdmin(String username, String password);
+	public Admin isValidAdmin(String username, String password);
 }
