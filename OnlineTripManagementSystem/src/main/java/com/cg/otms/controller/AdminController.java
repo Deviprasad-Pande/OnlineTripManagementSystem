@@ -18,14 +18,14 @@ import com.cg.otms.services.IAdminService;
  *
  */
 @RestController
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class AdminController {
 
 	@Autowired   
 	private IAdminService adminService;
 
 	@GetMapping("/validateadmin/{username}/{password}")
-	public boolean isValidAdmin(@PathVariable String username, @PathVariable String password) {
+	public Admin isValidAdmin(@PathVariable String username, @PathVariable String password) {
 		return adminService.isValidAdmin(username, password);
 	}
 

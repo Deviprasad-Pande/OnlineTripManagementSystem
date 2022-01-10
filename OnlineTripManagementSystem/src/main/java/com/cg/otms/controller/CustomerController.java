@@ -21,7 +21,7 @@ import com.cg.otms.services.ICustomerService;
  *
  */
 @RestController
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class CustomerController {
 
 	@Autowired
@@ -43,8 +43,8 @@ public class CustomerController {
 	}
 
 	@DeleteMapping("/deletecustomerbyid/{id}")
-	public String deleteCustomer(@PathVariable int id) {
-		return customerService.delete(id);
+	public Customer deleteCustomer(@PathVariable int id) {
+		return customerService.delete(customer.id);
 	}
 
 	@GetMapping("/getcustomerbyid/{id}")
@@ -59,8 +59,8 @@ public class CustomerController {
 		return new ResponseEntity<>(customer, HttpStatus.OK);
 	}
 
-	@GetMapping("/validateCustomer/{username}/{password}")
-	public boolean validateCustomer(@PathVariable String username, @PathVariable String password) {
+	@GetMapping("/validateCustomer")
+	public Customer validateCustomer(@PathVariable String username, @PathVariable String password) {
 		return customerService.validateCustomerByUsernameandPassword(username, password);
 	}
 }

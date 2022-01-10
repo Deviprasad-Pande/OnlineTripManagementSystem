@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.cg.otms.entities.Customer;
 import com.cg.otms.exceptions.CustomerNotFoundException;
 import com.cg.otms.repositories.ICustomerRepository;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 /**
  * 
@@ -42,7 +43,11 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param customer
 	 * @return updated Customer
 	 */
+	
+	
 	public Customer updateCustomer(Customer customer) {
+	customerRepository.findById();
+		
 		return customerRepository.save(customer);
 	}
 

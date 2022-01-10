@@ -12,11 +12,11 @@ public interface ICustomerService {
 
 	public Customer updateCustomer(Customer customer);
 
-	public String delete(int id);
+	public Customer delete(int id);
 
 	public Customer getCustomerById(int id);
 
 	public List<Customer> getCustomersByName(String name);
 
-	public boolean validateCustomerByUsernameandPassword(String username, String password);
+	public Customer validateCustomerByUsernameandPassword(String username, String password);
 }
