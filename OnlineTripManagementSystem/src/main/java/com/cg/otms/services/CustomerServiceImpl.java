@@ -46,7 +46,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	
 	
 	public Customer updateCustomer(Customer customer) {
-	customerRepository.findById();
+	customerRepository.findById(null);
 		
 		return customerRepository.save(customer);
 	}
