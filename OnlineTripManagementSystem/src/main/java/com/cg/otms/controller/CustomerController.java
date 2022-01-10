@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.otms.entities.Customer;
+import com.cg.otms.entities.LoginBean;
 import com.cg.otms.services.ICustomerService;
 
 /**
@@ -26,7 +27,9 @@ public class CustomerController {
 
 	@Autowired
 	private ICustomerService customerService;
-
+	
+	
+	
 	@PostMapping("/addcustomer")
 	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
 		return new ResponseEntity<>(customerService.addCustomer(customer), HttpStatus.OK);
@@ -60,7 +63,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/validateCustomer")
-	public Customer validateCustomer(@PathVariable String username, @PathVariable String password) {
-		return customerService.validateCustomerByUsernameandPassword(username, password);
+	public Customer validateCustomer(@RequestBody LoginBean loginBean) {
+		return customerService.validateCustomerByUsernameandPassword(loginBean.getUsername(),loginBean.getPassword());
 	}
 }

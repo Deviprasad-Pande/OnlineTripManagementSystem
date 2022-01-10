@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.cg.otms.entities.Admin;
+import com.cg.otms.entities.LoginBean;
 import com.cg.otms.services.IAdminService;
 
 /**
@@ -24,9 +25,9 @@ public class AdminController {
 	@Autowired   
 	private IAdminService adminService;
 
-	@GetMapping("/validateadmin/{username}/{password}")
-	public Admin isValidAdmin(@PathVariable String username, @PathVariable String password) {
-		return adminService.isValidAdmin(username, password);
+	@GetMapping("/validateadmin")
+	public Admin isValidAdmin(@RequestBody LoginBean loginBean) {
+		return adminService.isValidAdmin(loginBean.getUsername(),loginBean.getPassword());
 	}
 
 	@PostMapping("/createadmin")

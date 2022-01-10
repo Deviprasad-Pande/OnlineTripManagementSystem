@@ -38,7 +38,7 @@ public class AdminServiceImpl implements IAdminService {
 		return admin;
 	}
 	else {
-		throw new CustomerNotFoundException("invalid user and pass");
+		throw new CustomerNotFoundException("invalid user and password");
 		
 	}
 	

@@ -96,7 +96,12 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @param password of String type
 	 * @return true if Customer is found with same user name and password.
 	 */
-	public boolean validateCustomerByUsernameandPassword(String username, String password) {
-		return customerRepository.findByUsernameAndPassword(username, password) != null;
+	public Customer validateCustomerByUsernameandPassword(String username, String password) {
+		Customer customer = customerRepository.findByUsernameAndPassword(username,password);
+		if(customer == null)
+		{
+			throw new CustomerNotFoundException("Invalid username or password");
+		}else
+			return customer;
 	}
 }
